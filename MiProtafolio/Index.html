@@ -21,18 +21,18 @@
     </nav>
     <main>
         <section class="seccion-inicio">
-            <div>
+            <div class="seccion-contenido">
                 <h2>Hola, soy Karen Hernández</h2>
                 <p>Soy Estudiante de ITIID en la escuela upq y ahora estóy aprendioendo desarrollo de aplicaciones Web</p>
-                <a href="">Ver mis proyectos</a>
+                <a href=""class="boton">Ver mis proyectos</a>
             </div>
         </section>
         <!-- sobre mi -->
         <section>
             <h2>Sobre Mi</h2>
-            <div> 
-                <img src="" alt="Foto de Karen Hernández">
-                <p>Foto sobre lo que me gusta</p>
+            <div class="sobre-mi-contenido"> 
+                <img src="img.jpg" alt="Foto de Karen Hernández">
+                <p>Esta soy yo</p>
                 <p>En esta practica estoy aprendiendo HTML y CSS</p>
             </div>
         </section>
@@ -40,7 +40,7 @@
         <section>
             <h2>Mis Habilidades</h2>
             <div>
-                <ul>
+                <ul class="lista-habilidades">
                     <li>JAVA</li>
                     <li>PSINT</li>
                     <li>C++</li>
@@ -54,39 +54,59 @@
         <!--Seccion de habilidades-->
         <section>
             <h2>Proyectos</h2>
-            <div>
-                <article>
+            <div class="contenedor-proyectos">
+                <article class="proyectos">
                     <H3>SISTEMA DE RECICLAJE DE RESIDUOS</H3>
-                    <p>Sistema que monitorea y guarda los puntos en donde se pueden tiras los residuos para poder ser reciclaje</p>
+                    <p>Sistema que monitorea y guarda los puntos en donde se pueden tiras los residuos para poder ser reciclados</p>
                     <a href="">Ver Proyectos</a>
-                    </article>
+                </article>
+                <article class="proyectos">
+                    <H3>SISTEMA DE Reciclaje</H3>
+                    <p>Sistemas que cuidan los productos reciclados</p>
+                    <a href="">Ver Proyectos</a>
+                </article>
             </div>
         </section>
-        <section>
-            <h2>Contactame</h2>
-            <form action="">
-                <div>
-                    <label for="">Nombre</label>
-                    <input type="text">
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form>
+                <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <input 
+                        type="text" 
+                        id="nombre" 
+                        name="nombre" 
+                        placeholder="Escribe tu nombre"
+                    >
                 </div>
-                <div>
-                    <label for="">Correo</label>
-                    <input type="email">
+                <div class="campo">
+                    <label for="email">
+                        Correo electrónico
+                    </label>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com">
                 </div>
-                <div>
-                    <label for="">Mensaje</label>
-                    <textarea rows="10">
-
+                <div class="campo">
+                    <label for="mensaje">
+                        Mensaje
+                    </label>
+                    <textarea 
+                        id="mensaje" 
+                        name="mensaje" 
+                        rows="5" 
+                        placeholder="Escribe tu mensaje">
                     </textarea>
                 </div>
-
+                 <button type="submit">
+                    Enviar mensaje
+                </button>
             </form>
-
         </section>
-
-
-
     </main>
+    <footer>
+        <p>2026 Mi portafolio Web</p>
+        <p>Practica de programación web</p>
+        <p>© Todos los derechos reservados</p>
+    </footer>
    
 </body>
 </html>

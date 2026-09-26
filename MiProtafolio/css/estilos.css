@@ -1,9 +1,11 @@
 *{
     box-sizing: border-box;
 }
+
 html{
     scroll-behavior: smooth;
 }
+
 body{
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -11,6 +13,7 @@ body{
     color:rgb(0, 0, 0);
     background-color: #d4bef2;
 }
+
 /* ENCABEZADO */
 header{
     text-align: center;
@@ -18,10 +21,12 @@ header{
     background-color: #341861;
     color:#ffffff
 }
+
 header h1{
     margin: 0;
     font-size:50px;
 }
+
 header p{
     margin-top:10px;
     font-size:20px;
@@ -37,15 +42,18 @@ nav{
     background-color: #e2cffe;
     border-bottom: 1px solid #b199d2;
 }
+
 nav a{
     color:#23123e;
     text-decoration:none;
     font-weight:bold;
 
 }
+
 nav a:hover{
     text-decoration:underline;
 }
+
 /* Main */
 main{
     max-width: 1300px;
@@ -53,12 +61,14 @@ main{
     background-color: #c7a2ff;
 
 }
+
 /* Propiedades generales de las secciones */
 section{
     padding: 60px 40px;
-    border-bottom: 1px solid #ba97e9;
+    border-bottom: 1px solid #aa7be9;
 
 }
+
 section h2{
     margin-top:0;
     margin-bottom: 30px;
@@ -66,6 +76,7 @@ section h2{
     font-size:30px;
 
 }
+
 /* Secciones */
 .seccion-inicio{
     min-height: 400px;
@@ -73,4 +84,179 @@ section h2{
     justify-content: center;
     align-content: center;
     text-align:center;
+}
+
+.seccion-contenido{
+    max-width: 700px;
+}
+
+.seccion-contenido h2{
+   font-size: 42px;
+   margin-bottom: 15px;
+}
+
+.seccion-contenido p{
+    font-size: 20px;
+    margin-bottom: 30px;
+
+}
+
+/* Boton */
+.boton,button{
+    display:inline-block;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    background-color: #8428ee;
+    color:#d4bef2;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+.boton:hover,button:hover{
+    background-color:#3a1a69;
+    color: #bf92f2;
+}
+
+/* seccion sobre mi */
+.sobre-mi-contenido{
+    display:flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sobre-mi-contenido img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.sobre-mi-contenido p{
+    font-size: 16px;
+}
+
+/* Seccion habilidades */
+.lista-habilidades{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0;
+    list-style: none;
+}
+
+.lista-habilidades li{
+    padding: 12px 28px;
+    background-color: #5f349e;
+    border:1px solid #50076f;
+    border-radius: 5px;
+    font-weight: bold;
+
+}
+
+/* seccion proyectos */
+.contenedor-proyectos{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.proyectos{
+    flex: 1;
+    min-width: 250px;
+    padding: 25px;
+    border: 1px solid #500765;
+    border-radius: 8px;
+    background-color: #aa7be9;
+}
+.proyectos h3{
+    margin-top: 0;
+    font-size: 22px;
+}
+.proyectos a{
+    color:#23123e;
+    font-weight: bold;
+}
+
+/* Seccion formulario */
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #deb5fb;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.campo textarea {
+    resize: vertical;
+}
+
+form button {
+    width: 100%;
+}
+
+
+/* diseño pie de pagina */
+footer {
+    padding: 30px 20px;
+    text-align: center;
+    background-color: #3b1363;
+    color: #fff;
+}
+
+footer p {
+    margin: 5px;
+}
+
+/* DISEÑO RESPONSIVE */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 32px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    section {
+        padding: 40px 20px;
+    }
+
+    .inicio-contenido h2 {
+        font-size: 32px;
+    }
+
+    .sobre-mi-contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contenedor-proyectos {
+        flex-direction: column;
+    }
 }
