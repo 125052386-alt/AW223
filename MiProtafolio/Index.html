@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css">
     <title>Mi Portafolio</title>
+    <script src="codigojs/cambios.js" defer></script>
 </head>
 <body>
     <!-- shift+alt+a sirve para comentar de manera rapida -->
     <header>
        <h1>Mi portafolio</h1> 
-       <p>Bienvenido a mi sitio web personal</p>
+       <p id="texto-viejo">Bienvenido a mi sitio web personal</p>
+       <button type="button" id="cambio-mensaje">Cambiar Mensaje</button>
     </header>
     <nav>
         <a href="">Inicio</a>
@@ -40,7 +42,7 @@
         <section>
             <h2>Mis Habilidades</h2>
             <div>
-                <ul class="lista-habilidades">
+                <ul id="habilidades" class="lista-habilidades">
                     <li>JAVA</li>
                     <li>PSINT</li>
                     <li>C++</li>
@@ -49,6 +51,10 @@
                     <li>SCRATCH</li>
                     <li>PHP</li>
                 </ul>
+            </div>
+            <div>
+                <button type="button" id="cambiar-color">Cambiar color</button>
+                <button type="button" id="cambiar-tipografia">Cambiar tipografía</button>
             </div>
         </section>
         <!--Seccion de habilidades-->
@@ -69,7 +75,7 @@
         </section>
         <section id="contacto">
             <h2>Contacto</h2>
-            <form>
+            <form id="formcontacto">
                 <div class="campo">
                     <label for="nombre">Nombre</label>
                     <input 
@@ -78,12 +84,14 @@
                         name="nombre" 
                         placeholder="Escribe tu nombre"
                     >
+                    <small id="error-nombre"></small>
                 </div>
                 <div class="campo">
                     <label for="email">
                         Correo electrónico
                     </label>
                     <input type="email" id="email" name="email" placeholder="ejemplo@correo.com">
+                    <small id="error-email"></small>
                 </div>
                 <div class="campo">
                     <label for="mensaje">
@@ -95,11 +103,12 @@
                         rows="5" 
                         placeholder="Escribe tu mensaje">
                     </textarea>
+                    <small id="mensajeE"></small>
                 </div>
                  <button type="submit">
                     Enviar mensaje
                 </button>
-            </form>
+            </form> 
         </section>
     </main>
     <footer>
