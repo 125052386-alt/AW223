@@ -160,6 +160,10 @@ section h2{
 
 }
 
+.controles-habilidades{
+    text-align: center;
+}
+
 /* seccion proyectos */
 .contenedor-proyectos{
     display: flex;
@@ -232,6 +236,80 @@ footer p {
     margin: 5px;
 }
 
+/* Tabla de mensajes */
+.tabla-contenedor {
+    overflow-x: auto;
+    border: 1px solid #aa7be9;
+    background-color: #e2cffe;
+}
+
+.tabla-mensajes {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabla-mensajes th,
+.tabla-mensajes td {
+    padding: 13px 15px;
+    border-bottom: 1px solid #aa7be9;
+    vertical-align: top;
+}
+
+.tabla-mensajes th {
+    background-color: #341861;
+    color: #fff;
+}
+
+.tabla-mensajes td.mensaje-celda {
+    min-width: 240px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.acciones-mensaje {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.accion {
+    display: inline-flex;
+    align-items: center;
+    color: #23123e;
+    text-decoration: none;
+}
+
+.accion:hover {
+    color: #8428ee;
+}
+
+.acciones-mensaje form {
+    margin: 0;
+}
+
+.accion-borrar {
+    padding: 4px;
+    border: 0;
+    background: none;
+    color: #23123e;
+    cursor: pointer;
+}
+
+.accion-borrar:hover {
+    background: none;
+    color: #8428ee;
+    text-decoration: underline;
+}
+
+.mensaje-vacio {
+    padding: 14px 18px;
+    background-color: #e2cffe;
+    border-left: 4px solid #5f349e;
+}
+
 /* DISEÑO RESPONSIVE */
 @media (max-width: 600px) {
     header h1 {
@@ -260,4 +338,20 @@ footer p {
     .contenedor-proyectos {
         flex-direction: column;
     }
+}
+
+/* Administracion */
+.pagina-admin {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.pagina-admin main {
+    flex: 1;
+}
+
+.pagina-admin main section {
+    max-width: 1000px;
+    margin: 0 auto;
 }
