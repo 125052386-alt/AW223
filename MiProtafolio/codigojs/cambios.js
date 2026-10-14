@@ -1,4 +1,4 @@
-
+/* 
 
 function cambiomensaje()
 {
@@ -36,10 +36,10 @@ botontipografia.addEventListener("click",cambiocssT)
 
 
 
+ */
 
 
-
-const formulario = document.getElementById("formcontacto");
+/* const formulario = document.getElementById("formcontacto");
 
 if (formulario) {
     formulario.addEventListener("submit", function (e) {
@@ -76,4 +76,4 @@ if (formulario) {
             formulario.reset();
         }
     });
-}
+} */

@@ -16,7 +16,7 @@
         <a href="admin.php" aria-label="Regresar al admin" title="Regresar al admin">
             <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-.73"/></svg>
         </a>
-        <a href="Index.html" aria-label="Regresar al portafolio" title="Regresar al portafolio">
+        <a href="Index.php" aria-label="Regresar al portafolio" title="Regresar al portafolio">
             <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1z"/></svg>
         </a>
     </nav>
@@ -28,7 +28,7 @@
                     <label for="nombre">Nombre</label>
                     <input 
                         id="nombre" 
-                        name="nombre" 
+                        name="txtnombre" 
                         placeholder="Escribe tu nombre"
                     >
                     <small id="error-nombre"></small>
@@ -37,7 +37,11 @@
                     <label for="email">
                         Correo electrónico
                     </label>
-                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com">
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="txtemail" 
+                        placeholder="ejemplo@correo.com">
                     <small id="error-email"></small>
                 </div>
                 <div class="campo">
@@ -46,7 +50,7 @@
                     </label>
                     <textarea 
                         id="mensaje" 
-                        name="mensaje" 
+                        name="txtmensaje" 
                         rows="5" 
                         placeholder="Escribe tu mensaje">
                     </textarea>

@@ -15,15 +15,15 @@
        <button type="button" id="cambio-mensaje">Cambiar Mensaje</button>
     </header>
     <nav>
-        <a href="">Inicio</a>
-        <a href="">Sobre Mi</a>
-        <a href="">Habilidades</a>
-        <a href="">Proyectos</a>
-        <a href="">Contacto</a>
+        <a href="#inicio">Inicio</a>
+        <a href="#sb">Sobre Mi</a>
+        <a href="#Habilidades">Habilidades</a>
+        <a href="#Proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
         <a href="admin.php">Admin</a>
     </nav>
     <main>
-        <section class="seccion-inicio">
+        <section id="inicio" class="seccion-inicio">
             <div class="seccion-contenido">
                 <h2>Hola, soy Karen Hernández</h2>
                 <p>Soy Estudiante de ITIID en la escuela upq y ahora estóy aprendioendo desarrollo de aplicaciones Web</p>
@@ -31,7 +31,7 @@
             </div>
         </section>
         <!-- sobre mi -->
-        <section>
+        <section Id=sb>
             <h2>Sobre Mi</h2>
             <div class="sobre-mi-contenido"> 
                 <img src="img.jpg" alt="Foto de Karen Hernández">
@@ -40,7 +40,7 @@
             </div>
         </section>
        <!--  Seccion de mis habilidades -->
-        <section>
+        <section id="Habilidades">
             <h2>Mis Habilidades</h2>
             <div>
                 <ul id="habilidades" class="lista-habilidades">
@@ -59,7 +59,7 @@
             </div>
         </section>
         <!--Seccion de habilidades-->
-        <section>
+        <section id="Proyectos">
             <h2>Proyectos</h2>
             <div class="contenedor-proyectos">
                 <article class="proyectos">
@@ -76,7 +76,7 @@
         </section>
         <section id="contacto">
             <h2>Contacto</h2>
-            <form id="formcontacto">
+            <form id="formcontacto" action="guardar_mensaje.php" method="post">
                 <div class="campo">
                     <label for="nombre">Nombre</label>
                     <input 
@@ -91,7 +91,12 @@
                     <label for="email">
                         Correo electrónico
                     </label>
-                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com">
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="ejemplo@correo.com"
+                    >
                     <small id="error-email"></small>
                 </div>
                 <div class="campo">

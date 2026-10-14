@@ -40,7 +40,7 @@ function mostrar($valor)
     </header>
 
     <nav aria-label="Navegación de administración">
-        <a href="Index.html" aria-label="Regresar al portafolio" title="Regresar al portafolio">
+        <a href="Index.php" aria-label="Regresar al portafolio" title="Regresar al portafolio">
             <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1z"/></svg>
         </a>
     </nav>
