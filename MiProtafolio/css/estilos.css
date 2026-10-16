@@ -276,6 +276,7 @@ footer p {
     min-width: 240px;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
+    text-align: center;
 }
 
 .acciones-mensaje {

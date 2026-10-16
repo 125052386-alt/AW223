@@ -4,7 +4,7 @@ const estado=parametros.get("estado");
 
 if (estado==="exito")
 {
-    alert("Exito; Tu mensaje fue enviado");
+    alert("Exito: Tu mensaje fue enviado");
 
 }else if(estado==="error")
 {

@@ -43,15 +43,17 @@
                                 echo "<tr>
                                     <td>", $arrmensaje['nombre'], "</td>
                                     <td>", $arrmensaje['correo'], "</td>
-                                    <td>",$arrmensaje['mensaje'],"</td>
+                                    <td class='mensaje-celda'>",$arrmensaje['mensaje'],"</td>
                                     <td>", $arrmensaje['timeStaps'], "</td>
-                                    <td class='acciones-mensaje'>
+                                    <td>
+                                        <div class='acciones-mensaje'>
                                         <a class='accion' href='editar.php' aria-label='Editar mensaje de ' title='Editar'>
                                             <svg aria-hidden='true' viewBox='0 0 24 24' width='18' height='18' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 20h9'/><path d='M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z'/></svg>
                                         </a>
                                         <button class='accion-borrar' type='button' aria-label='Borrar mensaje de ' title='Borrar'>
                                             <svg aria-hidden='true' viewBox='0 0 24 24' width='18' height='18' fill='none' stroke='currentColor' stroke-width='2'><path d='M3 6h18M8 6V4h8v2m3 0-1 14H6L5 6m4 4v6m6-6v6'/></svg>
                                         </button>
+                                        </div>
                                     </td>
                                 </tr>";
                             }
