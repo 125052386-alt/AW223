@@ -238,37 +238,48 @@ footer p {
 
 /* Tabla de mensajes */
 .tabla-contenedor {
+    width: 100%;
     overflow-x: auto;
     border: 1px solid #aa7be9;
     background-color: #e2cffe;
 }
 
 .tabla-mensajes {
+
     width: 100%;
+    overflow-x: auto;
     min-width: 620px;
     border-collapse: collapse;
     text-align: left;
 }
+.tabla-mensajes tr{
 
+    width: 100%;
+}
 .tabla-mensajes th,
 .tabla-mensajes td {
+
+    width:100%;
     padding: 13px 15px;
     border-bottom: 1px solid #aa7be9;
     vertical-align: top;
 }
 
 .tabla-mensajes th {
+    width: 100%;
     background-color: #341861;
     color: #fff;
 }
 
 .tabla-mensajes td.mensaje-celda {
+    width: 100%;
     min-width: 240px;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
 }
 
 .acciones-mensaje {
+
     display: flex;
     align-items: center;
     gap: 8px;
@@ -305,6 +316,7 @@ footer p {
 }
 
 .mensaje-vacio {
+    width: max-content;
     padding: 14px 18px;
     background-color: #e2cffe;
     border-left: 4px solid #5f349e;

@@ -1,30 +1,4 @@
-<?php
-$mensajes = [
-    [
-        'id' => 1,
-        'nombre' => 'Karen',
-        'email' => 'karen@example.com',
-        'mensaje' => 'Hola, me interesa tu portafolio.',
-    ],
-    [
-        'id' => 2,
-        'nombre' => 'Tony',
-        'email' => 'tony@example.com',
-        'mensaje' => 'Quisiera más información sobre tus proyectos.',
-    ],
-    [
-        'id' => 3,
-        'nombre' => 'Kevin',
-        'email' => 'kevin@example.com',
-        'mensaje' => 'No me interesa saber sobre tus proyectos.',
-    ],
-];
 
-function mostrar($valor)
-{
-    return htmlspecialchars((string) $valor, ENT_QUOTES, 'UTF-8');
-}
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -52,32 +26,36 @@ function mostrar($valor)
                 <table class="tabla-mensajes">
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Correo</th>
-                            <th scope="col">Mensaje</th>
-                            <th scope="col">Opciones</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Mensaje</th>
+                            <th>Fecha</th>
+                            <th>Opciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($mensajes as $mensaje) { ?>
-                            <tr>
-                                <td><?= $mensaje['id'] ?></td>
-                                <td><?= mostrar($mensaje['nombre']) ?></td>
-                                <td><?= mostrar($mensaje['email']) ?></td>
-                                <td class="mensaje-celda"><?= mostrar($mensaje['mensaje']) ?></td>
-                                <td>
-                                    <div class="acciones-mensaje">
-                                        <a class="accion" href="editar.php" aria-label="Editar mensaje de <?= mostrar($mensaje['nombre']) ?>" title="Editar">
-                                            <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z"/></svg>
+                        <?php
+                            require 'consulta_mensajes.php';
+                            $rsMensaje=consultaMensajes();
+                            
+                            while($arrmensaje=mysqli_fetch_array($rsMensaje)){
+
+                                echo "<tr>
+                                    <td>", $arrmensaje['nombre'], "</td>
+                                    <td>", $arrmensaje['correo'], "</td>
+                                    <td>",$arrmensaje['mensaje'],"</td>
+                                    <td>", $arrmensaje['timeStaps'], "</td>
+                                    <td class='acciones-mensaje'>
+                                        <a class='accion' href='editar.php' aria-label='Editar mensaje de ' title='Editar'>
+                                            <svg aria-hidden='true' viewBox='0 0 24 24' width='18' height='18' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 20h9'/><path d='M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z'/></svg>
                                         </a>
-                                        <button class="accion-borrar" type="button" aria-label="Borrar mensaje de <?= mostrar($mensaje['nombre']) ?>" title="Borrar">
-                                            <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2m3 0-1 14H6L5 6m4 4v6m6-6v6"/></svg>
+                                        <button class='accion-borrar' type='button' aria-label='Borrar mensaje de ' title='Borrar'>
+                                            <svg aria-hidden='true' viewBox='0 0 24 24' width='18' height='18' fill='none' stroke='currentColor' stroke-width='2'><path d='M3 6h18M8 6V4h8v2m3 0-1 14H6L5 6m4 4v6m6-6v6'/></svg>
                                         </button>
-                                    </div>
-                                </td>
-                            </tr>
-                        <?php } ?>
+                                    </td>
+                                </tr>";
+                            }
+                        ?>
                     </tbody>
                 </table>
             </div>

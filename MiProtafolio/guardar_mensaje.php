@@ -11,9 +11,9 @@
     $stmt->bind_param("sss",$nombre,$email,$mensaje);
 
     if($stmt->execute()) {
-        echo "Mensaje guardado";
+        header("Location: index.php ?estado=exito");
     } else {
-        echo "Error al guardar el mensaje: ";
+        header("Location: index.php ?estado=error");
     }      
 
 ?>

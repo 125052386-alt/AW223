@@ -122,6 +122,7 @@
         <p>Practica de programación web</p>
         <p>© Todos los derechos reservados</p>
     </footer>
+    <script src="codigojs/AlertInsert.js"></script>
    
 </body>
 </html>
