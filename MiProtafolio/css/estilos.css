@@ -135,10 +135,11 @@ section h2{
     height: 200px;
     object-fit: cover;
     border-radius: 50%;
+    border: 3px solid #cca2ff
 }
 
 .sobre-mi-contenido p{
-    font-size: 16px;
+    font-size: 18px;
 }
 
 /* Seccion habilidades */

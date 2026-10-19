@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css">
     <title>Mi Portafolio</title>
-    <script src="codigojs/cambios.js" defer></script>
+    <!-- <script src="codigojs/cambios.js" defer></script> -->
 </head>
 <body>
     <!-- shift+alt+a sirve para comentar de manera rapida -->
     <header>
        <h1>Mi portafolio</h1> 
        <p id="texto-viejo">Bienvenido a mi sitio web personal</p>
-       <button type="button" id="cambio-mensaje">Cambiar Mensaje</button>
+      <!--  <button type="button" id="cambio-mensaje">Cambiar Mensaje</button> -->
     </header>
     <nav>
         <a href="#inicio">Inicio</a>
@@ -35,8 +35,11 @@
             <h2>Sobre Mi</h2>
             <div class="sobre-mi-contenido"> 
                 <img src="img.jpg" alt="Foto de Karen Hernández">
-                <p>Esta soy yo</p>
-                <p>En esta practica estoy aprendiendo HTML y CSS</p>
+                <div>
+                    <p>Esta soy yo</p>
+                    <p>En esta practica estoy aprendiendo HTML y CSS</p>
+                </div>
+
             </div>
         </section>
        <!--  Seccion de mis habilidades -->
@@ -53,10 +56,10 @@
                     <li>PHP</li>
                 </ul>
             </div>
-            <div class="controles-habilidades">
+<!--             <div class="controles-habilidades">
                 <button type="button" id="cambiar-color">Cambiar color</button>
                 <button type="button" id="cambiar-tipografia">Cambiar tipografía</button>
-            </div>
+            </div> -->
         </section>
         <!--Seccion de habilidades-->
         <section id="Proyectos">
@@ -68,7 +71,7 @@
                     <a href="">Ver Proyectos</a>
                 </article>
                 <article class="proyectos">
-                    <H3>SISTEMA DE Reciclaje</H3>
+                    <H3>SISTEMA DE RECICLAJE</H3>
                     <p>Sistemas que cuidan los productos reciclados</p>
                     <a href="">Ver Proyectos</a>
                 </article>
@@ -84,8 +87,9 @@
                         id="nombre" 
                         name="nombre" 
                         placeholder="Escribe tu nombre"
+                        required
                     >
-                    <small id="error-nombre"></small>
+                    <!-- <small id="error-nombre"></small> -->
                 </div>
                 <div class="campo">
                     <label for="email">
@@ -96,20 +100,22 @@
                         id="email" 
                         name="email" 
                         placeholder="ejemplo@correo.com"
+                        required
                     >
-                    <small id="error-email"></small>
+                   <!--  <small id="error-email"></small> -->
                 </div>
                 <div class="campo">
                     <label for="mensaje">
                         Mensaje
                     </label>
-                    <textarea 
+                    <textarea
                         id="mensaje" 
                         name="mensaje" 
                         rows="5" 
-                        placeholder="Escribe tu mensaje">
-                    </textarea>
-                    <small id="mensajeE"></small>
+                        placeholder="Escribe un mensaje"
+                        required
+                    ></textarea>
+                   <!--  <small id="mensajeE"></small> -->
                 </div>
                  <button type="submit">
                     Enviar mensaje
