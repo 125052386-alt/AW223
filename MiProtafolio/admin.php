@@ -47,12 +47,12 @@
                                     <td>", $arrmensaje['timeStaps'], "</td>
                                     <td>
                                         <div class='acciones-mensaje'>
-                                        <a class='accion' href='editar.php' aria-label='Editar mensaje de ' title='Editar'>
+                                        <a class='accion' href='editar.php?id=".$arrmensaje['id']." ' aria-label='Editar mensaje de ", htmlspecialchars($arrmensaje['nombre'], ENT_QUOTES, 'UTF-8'), "' title='Editar'>
                                             <svg aria-hidden='true' viewBox='0 0 24 24' width='18' height='18' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 20h9'/><path d='M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z'/></svg>
                                         </a>
-                                        <button class='accion-borrar' type='button' aria-label='Borrar mensaje de ' title='Borrar'>
+                                       <a class='accion-borrar' href='borrar_mensaje.php?id=".$arrmensaje['id']."' onclick='return confirm(\"Estas seguro de borrar este mensaje\");' aria-label='Borrar mensaje de ", htmlspecialchars($arrmensaje['nombre'], ENT_QUOTES, 'UTF-8'), "' title='Borrar'>
                                             <svg aria-hidden='true' viewBox='0 0 24 24' width='18' height='18' fill='none' stroke='currentColor' stroke-width='2'><path d='M3 6h18M8 6V4h8v2m3 0-1 14H6L5 6m4 4v6m6-6v6'/></svg>
-                                        </button>
+                                       </a>
                                         </div>
                                     </td>
                                 </tr>";
@@ -69,6 +69,7 @@
         <p>© 2026 Mi Portafolio</p>
         <p>Práctica de Programación Web</p>
     </footer>
-
+    <script src="codigojs/AlertUpdate.js"></script>
+    <script src="codigojs/AlertBorrar.js"></script>
 </body>
 </html>

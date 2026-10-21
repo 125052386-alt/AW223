@@ -1,5 +1,11 @@
+<?php
+    require_once("mostrar_mensaje.php");
+
+    $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
+    $arrmensaje = mostrarMensaje($id);
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,42 +29,38 @@
     <main>
             <section id="contacto">
             <h2>Editar Mensaje</h2>
-            <form id="formcontacto">
+            <form id="formcontacto" action="actualizar.php" method="POST">
+                <input type="hidden" name="id" value="<?php echo (int) $id; ?>">
                 <div class="campo">
                     <label for="nombre">Nombre</label>
-                    <input 
-                        id="nombre" 
-                        name="txtnombre" 
-                        placeholder="Escribe tu nombre"
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        value="<?php echo htmlspecialchars($arrmensaje['nombre'], ENT_QUOTES, 'UTF-8'); ?>"
+                        required
                     >
-                    <small id="error-nombre"></small>
                 </div>
                 <div class="campo">
-                    <label for="email">
-                        Correo electrónico
-                    </label>
-                    <input 
-                        type="email" 
-                        id="email" 
-                        name="txtemail" 
-                        placeholder="ejemplo@correo.com">
-                    <small id="error-email"></small>
+                    <label for="email">Correo electrónico</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value="<?php echo htmlspecialchars($arrmensaje['correo'], ENT_QUOTES, 'UTF-8'); ?>"
+                        required
+                    >
                 </div>
                 <div class="campo">
-                    <label for="mensaje">
-                        Mensaje
-                    </label>
-                    <textarea 
-                        id="mensaje" 
-                        name="txtmensaje" 
-                        rows="5" 
-                        placeholder="Escribe tu mensaje">
-                    </textarea>
-                    <small id="mensajeE"></small>
+                    <label for="mensaje">Mensaje</label>
+                    <textarea
+                        id="mensaje"
+                        name="mensaje"
+                        rows="5"
+                        required
+                    ><?php echo htmlspecialchars($arrmensaje['mensaje'], ENT_QUOTES, 'UTF-8'); ?></textarea>
                 </div>
-                 <button type="submit">
-                   Actualizar mensaje
-                </button>
+                <button type="submit">Actualizar mensaje</button>
             </form> 
         </section>
     </main>
@@ -67,5 +69,6 @@
         <p>Practica de programación web</p>
         <p>© Todos los derechos reservados</p>
     </footer>
+    <script src="codigojs/AlertInsert.js"></script>
 </body>
 </html>
