@@ -7,7 +7,7 @@
 
         $sqlsolicitud = "SELECT
             s.id_solicitud,
-            u.nombre, u.correo AS solicitante,
+            u.nombre AS solicitante,
             e.nombre_equipo,
             s.descripcion AS problema,
             s.estado,
