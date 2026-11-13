@@ -40,6 +40,46 @@
                 </button>
             </form> 
         </section>
+        <section>
+                <div class="tabla-contenedor">
+                <table class="tabla-gastos">
+                    <thead>
+                        <tr>
+                            <th scope="col">Concepto</th>
+                            <th scope="col">Monto</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            require 'consulta_gastos.php';
+                            $rsMensaje=ConsultaGastos();
+                            
+                            while($arrmensaje=mysqli_fetch_array($rsMensaje)){
+
+                                echo "<tr>
+                                    <td>", $arrmensaje['concepto'], "</td>
+                                    <td>", $arrmensaje['monto'], "</td>
+                                    <td>",$arrmensaje['categoria'],"</td>
+                                    <td>",$arrmensaje['pagado'],"</td>
+                                    <td>", $arrmensaje['fecha'], "</td>
+
+                                    <td class='acciones-mensaje'>
+                                        <a class='accion' href='editar.php' aria-label='Mostrar Pagado ' title='Marcar Pagado'>
+                                        <button type='submit'>
+                                            Marcar Pagado
+                                        </button>
+                                        </a>
+                                        </td>
+                                </tr>";
+                            }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mensaje-vacio" hidden>No hay mensajes recibidos.</p>
+        </section>
 
     
 </body>
