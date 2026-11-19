@@ -1,0 +1,63 @@
+/* Seccion formulario */
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.campo {
+    margin-bottom: 10px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.campo input{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #deb5fb;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+form button {
+    width: 20%;
+}
+
+/* Tabla de mensajes */
+.tabla-contenedor {
+    overflow-x: auto;
+    border: 1px solid #aa7be9;
+    background-color: #e2cffe;
+}
+
+.tabla-mensajes {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabla-mensajes th,
+.tabla-mensajes td {
+    padding: 13px 15px;
+    border-bottom: 1px solid #aa7be9;
+    vertical-align: top;
+}
+
+.tabla-mensajes th {
+    background-color: #341861;
+    color: #d50f0f;
+}
+
+.tabla-mensajes td.mensaje-celda {
+    min-width: 240px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}

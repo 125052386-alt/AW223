@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/estilos.css">
     <title>Gastos</title>
 </head>
 <body>
@@ -66,10 +67,9 @@
                                     <td>", $arrmensaje['fecha'], "</td>
 
                                     <td class='acciones-mensaje'>
-                                        <a class='accion' href='editar.php' aria-label='Mostrar Pagado ' title='Marcar Pagado'>
-                                        <button type='submit'>
+                                        <a class='accion' href='mostrar_pagdo.php?=id
+                                        ' type='submit'>
                                             Marcar Pagado
-                                        </button>
                                         </a>
                                         </td>
                                 </tr>";
