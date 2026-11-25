@@ -1,15 +1,13 @@
 from flask import Flask
 
-app=Flask(__name__)
+from controllers.ControladorAlumno import controladorAlumnoBP 
 
-# para identificar una ruta de bievenidad va a empezar con / es igual al index
-@app.route('/')
-def inicio():
-    return "Hola Mundo Flask"
+def create_app():
+    app=Flask(__name__)
+    app.register_blueprint(controladorAlumnoBP)
+    return app
 
-@app.route('/soyotraruta', method=[POST])
-def otra():
-    return "Adios Mundo Flask"
 
 if __name__=='__main__':
-    app.run(debug=True)
+    app=create_app()
+    app.run(port=5000,debug=True)
