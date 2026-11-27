@@ -1,9 +1,15 @@
 from flask import Flask
+from config import config 
+from flask_mysqldb import MySQL
 
-from controllers.ControladorAlumno import controladorAlumnoBP 
+
+mysql=MySQL()
 
 def create_app():
     app=Flask(__name__)
+    app.config.from_object(config)
+    mysql.init_app(app)
+    from controllers.ControladorAlumno import controladorAlumnoBP 
     app.register_blueprint(controladorAlumnoBP)
     return app
 

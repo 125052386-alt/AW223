@@ -1,4 +1,5 @@
-from flask import Blueprint 
+from flask import Blueprint, request, jsonify
+from Models.modelEstudiante import *
 
 controladorAlumnoBP= Blueprint('controladorAlumno', __name__)
 
@@ -10,25 +11,65 @@ def inicio():
 # Ruta para insertar
 
 @controladorAlumnoBP.route('/guardarAlumno', methods=['POST'])
-
 def guardar():
-    return 'se guardo el alumno'
+    nombreReq=request.form.get('txtNombre','').strip()
+    carreraReq=request.form.get('txtCarrera','').strip()
+
+    try:
+        insertEstudiante(nombreReq, carreraReq)
+        return jsonify({"Completado" : "Estudiante Guardado"}),200
+    except Exception as e:
+        return jsonify({"Error": str(e)}),500
+        
 
 #ruta para consultar todo
-@controladorAlumnoBP.route('/consultaTodo')
+@controladorAlumnoBP.route('/consultaTodo', methods=['GET'])
 
 def consulta():
-    return 'se consulto todo'
+    try:
+        alumnos=selectAll()
+        return jsonify(alumnos),200
+    except Exception as e:
+        print(f"Error:{e}")
+        return jsonify({"Error": str(e)}),500
+    
 
 #ruta para actualizar 
 @controladorAlumnoBP.route('/actualizarAlumno', methods=['PUT'])
 
 def actualizar():
-    return 'se actualizaron los datos del alumno'
+    id=request.form.get('id','').strip()
+    nombreReq=request.form.get('txtNombre','').strip()
+    carreraReq=request.form.get('txtCarrera','').strip()
+
+    try:
+        actualizarEstudiante(id, nombreReq, carreraReq)
+        return jsonify({"Completado" : "Estudiante Actualizado"}),200
+    except Exception as e:
+        return jsonify({"Error": str(e)}),500
 
 
 #ruta para eliminar 
-@controladorAlumnoBP.route('/eliminarAlumno', methods=['DELETE'])
+@controladorAlumnoBP.route('/eliminarAlumno', methods=['PUT'])
 
 def eliminar():
-    return 'se elimino al alumno'
+
+    id=request.form.get('id','').strip()
+
+    try:
+        softDeleteEstudiante(id)
+        return jsonify({"Completado" : "Estudiante Borrado"}),200
+    except Exception as e:
+        return jsonify({"Error": str(e)}),500
+
+#ruta para consultar uno por medio de id
+@controladorAlumnoBP.route('/consultaUno', methods=['GET'])
+
+def consultaUno():
+    id=request.args.get('id','').strip()
+    try:
+        alumno=selectUno(id)
+        return jsonify(alumno),200
+    except Exception as e:
+        print(f"Error:{e}")
+        return jsonify({"Error": str(e)}),500
